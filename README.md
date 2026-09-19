@@ -1,16 +1,81 @@
-# React + Vite
+# EMBER — Restaurant Reservation Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+EMBER is a premium modern European restaurant experience based in Bangkok. The project combines an editorial customer-facing website with a reservation flow and a Supabase-powered admin dashboard for managing bookings.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Premium responsive restaurant homepage with Hero, About, Featured Dishes, and Menu sections
+- Customer reservation form with client-side validation
+- Supabase database integration for storing reservations
+- Admin email/password authentication with Supabase Auth
+- Protected admin dashboard for viewing reservations
+- Reservation status management with Confirm and Cancel actions
+- Loading, empty, validation, and error states
+- Responsive layouts for desktop, tablet, and mobile
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Supabase
+- Supabase Auth
+- Supabase JavaScript client
+- CSS
 
-## Expanding the Oxlint configuration
+## Customer Reservations
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Guests can submit their name, contact details, reservation date and time, guest count, and optional special requests. Valid reservations are inserted into the Supabase `reservations` table.
+
+## Admin Dashboard
+
+The protected `/admin` dashboard loads reservations from Supabase, displays reservation details and summary metrics, and allows authenticated administrators to confirm or cancel reservations. The admin login is available at `/admin/login`.
+
+## Local Development
+
+### Prerequisites
+
+- Node.js 18 or newer
+- A Supabase project
+
+### Setup
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Create a `.env` file in the project root using the placeholders below:
+
+   ```env
+   VITE_SUPABASE_URL=https://your-project-id.supabase.co
+   VITE_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
+   ```
+
+   Never commit real keys, passwords, or other secrets. The `.env` file is ignored by Git.
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open the local URL shown by Vite in your browser.
+
+### Available Commands
+
+```bash
+npm run dev      # Start the development server
+npm run lint     # Run Oxlint
+npm run build    # Create a production build
+npm run preview  # Preview the production build locally
+```
+
+## Future Improvements
+
+- Add role-based admin permissions and stronger operational access controls
+- Add reservation search, filters, pagination, and export tools
+- Add email confirmations and reminders for guests
+- Add availability rules and table capacity management
+- Add analytics for bookings, guest counts, and popular dining times
+- Add automated tests and end-to-end coverage
