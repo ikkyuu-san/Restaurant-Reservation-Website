@@ -2,6 +2,10 @@
 
 EMBER is a premium modern European restaurant experience based in Bangkok. The project combines an editorial customer-facing website with a reservation flow and a Supabase-powered admin dashboard for managing bookings.
 
+## Live Demo
+
+[Visit the live EMBER website](https://restaurant-reservation-website-rmqn.vercel.app)
+
 ## Features
 
 - Premium responsive restaurant homepage with Hero, About, Featured Dishes, and Menu sections
@@ -28,7 +32,7 @@ Guests can submit their name, contact details, reservation date and time, guest 
 
 ## Admin Dashboard
 
-The protected `/admin` dashboard loads reservations from Supabase, displays reservation details and summary metrics, and allows authenticated administrators to confirm or cancel reservations. The admin login is available at `/admin/login`.
+The project includes a protected `/admin` dashboard. Admin authentication is required before accessing reservation management tools. Authenticated admin users can view and manage reservations, including reviewing guest details and updating reservation statuses. The admin login is available at `/admin/login`.
 
 ## Local Development
 
